@@ -1,0 +1,45 @@
+[System]
+Name='TEST1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='bisector'
+
+[Input1]
+Name='input1'
+Range=[0 1]
+NumMFs=4
+MF1='VL':'gaussmf',[0.01 0]
+MF2='M':'gaussmf',[0.01 0.3]
+MF3='H':'gaussmf',[0.01 1]
+MF4='L':'gaussmf',[0.01 0.2]
+
+[Input2]
+Name='input2'
+Range=[0 1]
+NumMFs=4
+MF1='VL':'gaussmf',[0.04831 0]
+MF2='M':'gaussmf',[0.023 0.3]
+MF3='L':'gaussmf',[0.023 0.2]
+MF4='H':'gaussmf',[0.04831 1]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=4
+MF1='VL':'gaussmf',[0.005 0]
+MF2='L':'gaussmf',[0.005 0.2]
+MF3='M':'gaussmf',[0.005 0.3]
+MF4='H':'gaussmf',[0.005 1]
+
+[Rules]
+1 1, 1 (1) : 1
+2 2, 3 (1) : 1
+3 4, 4 (1) : 1
+4 3, 2 (1) : 1

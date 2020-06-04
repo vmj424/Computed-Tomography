@@ -1,0 +1,33 @@
+[System]
+Name='tectonic_ideal'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='input1'
+Range=[0 1]
+NumMFs=3
+MF1='A1':'gaussmf',[0.0186 0.000505]
+MF2='A2':'gaussmf',[0.0197 0.7524]
+MF3='A3':'gaussmf',[0.01459 0.9995]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='B1':'trimf',[-0.01 0 0.0002]
+MF2='B2':'trimf',[0.744 0.749 0.755]
+MF3='B3':'trimf',[0.999 1 1.01]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
